@@ -1,0 +1,24 @@
+body {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.bar {
+    fill: steelblue;
+}
+
+h1{
+    color: brown;
+    text-align: center;
+    border-top: solid;
+    border-width: 2px;
+    border-bottom: solid;
+    border-color: #EEAD9F;
+    border-radius: 30%;
+  }

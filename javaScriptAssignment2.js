@@ -37,13 +37,13 @@ rl.on('line',function(line)
 
 rl.on('close',function()
 {
-	for(var l=0;l<56;l++)
+	for(var l=0;l<54;l++)
 	{
 
 		tempData={};
 		tempData["Year"]=(1960+l).toString();
-		tempData["Birth rate, crude (per 1,000 people)"]=BirthRateYear[l].toString();
-		tempData["Death rate, crude (per 1,000 people)"]=DeathRateYear[l].toString();
+		tempData["BirthRateCrudePer1000People)"]=BirthRateYear[l].toString();
+		tempData["DeathRateCrudePer1000People)"]=DeathRateYear[l].toString();
 
 		jsonData.push(tempData);
 	

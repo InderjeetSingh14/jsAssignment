@@ -59,13 +59,13 @@ rl.on('line',function(line)
 rl.on('close',function()
 {
 
-	for(var l=0;l<56;l++)
+	for(var l=0;l<54;l++)
 	{
 		
 		tempData={};
 		tempData["Year"]=(1960+l).toString();
-		tempData["life expectancy at birth, female (Value)"]=((FemaleValueByYear[l]/AsiaCountries[l])*2).toString();
-		tempData["life expectancy at birth, male (Value)"]=((MaleValueByYear[l]/AsiaCountries[l])*2).toString();
+		tempData["lifeExpectancyAtBirthFemaleValue"]=((FemaleValueByYear[l]/AsiaCountries[l])*2).toString();
+		tempData["lifeExpectancyAtBirthMaleValue"]=((MaleValueByYear[l]/AsiaCountries[l])*2).toString();
 
 		jsonData.push(tempData);
 	

@@ -1,0 +1,40 @@
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: block;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+svg{
+    background-color: antiquewhite;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    display: block;
+  }
+  
+  h1{
+    color: brown;
+    text-align: center;
+    border-top: solid;
+    border-width: 2px;
+    border-bottom: solid;
+    border-color: #EEAD9F;
+    border-radius: 30%;
+  }
+
+  

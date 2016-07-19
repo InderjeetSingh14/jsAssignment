@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		
+		<!-- Website Title & Description for Search Engine purposes -->
+		<title></title>
+		<meta name="description" content="">
+		
+		<!-- If no online access, fallback to our hardcoded version of jQuery -->
+		<script>window.jQuery || document.write('<script src="js/jquery-1.8.2.min.js"><\/script>')</script>
+		<script src="//d3js.org/d3.v3.min.js"></script>
+		<!-- Mobile viewport optimized -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+		<!--<link href="css/styles.css" rel="stylesheet">-->
+		<link rel="stylesheet" type="text/css" href="css/bargraph.css">
+		<link rel="stylesheet" type="text/css" href="css/multiSeriesLineChart.css">
+		<link rel="stylesheet" type="text/css" href="css/stackedBarGraph.css">
+
+		<!-- Include Modernizr in the head, before any other Javascript -->
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		
+	</head>
+	<body>
+	
+	<div class="container-fluid" id="main">
+		
+		<div class="container" id="tabsection">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1>World Development Indicators - Life Expectancy</h1>
+					<div class="tabbable  col-sm-12">
+						<ul class="nav nav-tabs  col-sm-12">
+							<li class="active"><a href="#tab1" data-toggle="tab">Stacked Bar Chart</a></li>
+							<li><a href="#tab2" data-toggle="tab">Multi Series Line Chart</a></li>
+							<li><a href="#tab3" data-toggle="tab">Bar Chart</a></li>
+						</ul>
+						<div class="tab-content  col-sm-12">
+							<div class="tab-pane active col-sm-12" id="tab1">
+								<h2>Bar Chart of Top 5 Countries with Highest Life expectancy at birth</h2>
+   	 							
+   	 							<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+							   	<script src="js/barGraph.js"></script>
+							</div><!-- end tab-pane -->
+							
+							<div class="tab-pane col-sm-12" id="tab2">
+								<h1>Multi-Series Line Chart of India </h1>
+
+								<script src="js/multiSeriesLineChart.js"></script>
+							</div><!-- end tab-pane -->
+
+
+							<div class="tab-pane col-sm-12" id="tab3">
+								<h1>Stacked Bar Chart of the following Data Cumulated for Asian Countries</h1>
+								
+								<script src="js/stackedbarGraph.js"></script>
+							</div><!-- end tab-pane -->
+
+						</div><!-- end tab-content -->
+					</div><!-- end tabbable -->
+				</div><!-- end col-sm-12 -->
+			</div><!-- end row -->
+		</div><!-- end tabsection -->
+			
+
+		
+	</div><!-- end container -->
+	
+
+
+	<!-- All Javascript at the bottom of the page for faster page loading -->
+		
+	<!-- First try for the online version of jQuery-->
+	<script src="http://code.jquery.com/jquery.js"></script>
+	
+	<!-- Bootstrap JS -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+	
+	</body>
+</html>
+\

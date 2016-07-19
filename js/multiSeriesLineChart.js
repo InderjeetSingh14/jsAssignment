@@ -1,5 +1,7 @@
-var margin = {top: 20, right: 160, bottom: 30, left: 50},
-    width = 920 + margin.left + margin.right,
+$(document).ready(function(){
+
+var margin = {top: 20, right: 155, bottom: 30, left: 70},
+    width = 650 + margin.left + margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
@@ -23,13 +25,13 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.Year); })
     .y(function(d) { return y(d.Rate); });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#tab2").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("data2.json", function(error, data) {
+d3.json("../json/data2.json", function(error, data) {
   if (error) throw error;
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Year"; }));
   data.forEach(function(d) {
@@ -89,5 +91,7 @@ d3.json("data2.json", function(error, data) {
       .text(function(d) { return d.name; });
 
 
+
+});
 
 });

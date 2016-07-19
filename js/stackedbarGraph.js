@@ -1,8 +1,10 @@
+
+$(document).ready(function(){
 var margin = {
             top: 70,
-            right: 50,
+            right: 30,
             bottom: 70,
-            left: 300
+            left: 100
         },
         width = 1160 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
@@ -25,13 +27,13 @@ var margin = {
         .orient("left")
         .tickFormat(d3.format(".2s"));
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#tab3").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.json("data1.json", function(error, data) {
+    d3.json("../json/data1.json", function(error, data) {
 
         color.domain(d3.keys(data[0]).filter(function(key) {
             return key !== "Year";
@@ -133,3 +135,5 @@ var margin = {
             });
 
     });
+
+     });

@@ -1,6 +1,8 @@
+
+$(document).ready(function(){
 // set the dimensions of the canvas
-var margin = {top: 20, right: 20, bottom: 150, left: 380},
-    width = 960 - margin.left - margin.right,
+var margin = {top: 20, right: 90, bottom: 150, left: 110},
+    width = 900 - margin.left - margin.right,
     height = 600- margin.top - margin.bottom;
 
 
@@ -32,7 +34,7 @@ var yAxis = d3.svg.axis()
 
 
 // add the SVG element
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#tab1").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -44,7 +46,7 @@ svg.call(tip);
 
 
 // load the data
-d3.json("data3.json", function(error, data) {
+d3.json("../json/data3.json", function(error, data) {
 
     data.forEach(function(d) {
         d["Country"] = d["Country"];
@@ -93,5 +95,7 @@ d3.json("data3.json", function(error, data) {
        .attr("dy", "-3.5em")
        .style("text-anchor", "middle")
        .text("Life expectancy at birth, total (years)");
+
+});
 
 });

@@ -27,11 +27,22 @@ var margin = {
         .orient("left")
         .tickFormat(d3.format(".2s"));
 
+    //tooltip
+    var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+    return "<strong>Life expectancy at birth:</strong> <span style='color:red'>" + (d.y1-d.y0) + "</span>";
+    })
+
     var svg = d3.select("#tab3").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+    svg.call(tip);
 
     d3.json("../json/data1.json", function(error, data) {
 
@@ -107,9 +118,9 @@ var margin = {
             })
             .style("fill", function(d) {
                 return color(d.name);
-            });
-        // .on('mouseover',tip.show)
-        //.on('mouseout',tip.hide);
+            })
+            .on('mouseover',tip.show)
+            .on('mouseout',tip.hide);
 
         var legend = svg.selectAll(".legend")
             .data(color.domain().slice().reverse())

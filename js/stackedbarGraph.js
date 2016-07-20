@@ -1,13 +1,8 @@
 
 $(document).ready(function(){
-var margin = {
-            top: 70,
-            right: 30,
-            bottom: 70,
-            left: 100
-        },
-        width = 1160 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+var margin = {top: 60, right: 20, bottom: 0, left: 110},
+    width = 900 - margin.left - margin.right,
+    height = 650- margin.top - margin.bottom;
 
     var xScale = d3.scale.ordinal()
         .rangeRoundBands([0, width], .1);
@@ -35,9 +30,12 @@ var margin = {
     return "<strong>Life expectancy at birth:</strong> <span style='color:red'>" + (d.y1-d.y0) + "</span>";
     })
 
-    var svg = d3.select("#tab3").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+    var svg = d3.select("#tab3")
+            .classed("svg-container", true)
+            .append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 1000 800")
+            .classed("svg-content-responsive", true)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -90,6 +88,7 @@ var margin = {
             .call(yAxis)
             .append("text")
             .attr("transform", "rotate(-90)")
+            .attr("x", -170)
             .attr("y", 6)
             .attr("dy", "-3.71em")
             .style("text-anchor", "end")
@@ -147,4 +146,4 @@ var margin = {
 
     });
 
-     });
+});

@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-var margin = {top: 20, right: 160, bottom: 30, left: 70},
-    width = 650 + margin.left + margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin = {top: 60, right: 90, bottom: 0, left: 110},
+    width = 900 - margin.left - margin.right,
+    height = 650- margin.top - margin.bottom;
 
 var x = d3.scale.linear()
        .range([0, width]);
@@ -25,11 +25,14 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.Year); })
     .y(function(d) { return y(d.Rate); });
 
-var svg = d3.select("#tab2").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var svg = d3.select("#tab2")
+          .classed("svg-container", true)
+            .append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 1000 800")
+            .classed("svg-content-responsive", true)
+             .append("g")
+           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.json("../json/data2.json", function(error, data) {
   if (error) throw error;
@@ -68,6 +71,7 @@ d3.json("../json/data2.json", function(error, data) {
       .call(yAxis)
     .append("text")
       .attr("transform", "rotate(-90)")
+      .attr("x", -170)
       .attr("y", 6)
       .attr("dy", "-3.71em")
       .style("text-anchor", "end")

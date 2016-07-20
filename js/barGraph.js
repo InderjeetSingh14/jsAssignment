@@ -1,9 +1,8 @@
-
 $(document).ready(function(){
 // set the dimensions of the canvas
-var margin = {top: 20, right: 90, bottom: 150, left: 110},
+var margin = {top: 60, right: 90, bottom: 0, left: 110},
     width = 900 - margin.left - margin.right,
-    height = 600- margin.top - margin.bottom;
+    height = 650- margin.top - margin.bottom;
 
 
 // set the ranges
@@ -34,10 +33,13 @@ var yAxis = d3.svg.axis()
 
 
 // add the SVG element
-var svg = d3.select("#tab1").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+var svg = d3.select("#tab1")
+    .classed("svg-container", true)
+            .append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 1000 800")
+            .classed("svg-content-responsive", true)
+    .append("g")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
